@@ -1,0 +1,298 @@
+/**
+ * CSS global del proyecto
+ * Basado en Docusaurus + Infima
+ * Aquí se definen variables, layout y componentes reutilizables
+ */
+
+/* ======================================================
+   VARIABLES DE COLOR Y CONFIGURACIÓN GLOBAL
+   ====================================================== */
+
+/* Variables base (modo claro) */
+:root {
+  /* Color corporativo NookTrail (mostaza del logo) */
+  --ifm-color-primary: #bc8108;
+
+  --ifm-color-primary-dark: #a87407;
+  --ifm-color-primary-darker: #9f6e06;
+  --ifm-color-primary-darkest: #835a05;
+
+  --ifm-color-primary-light: #c9932a;
+  --ifm-color-primary-lighter: #d1a242;
+  --ifm-color-primary-lightest: #e2c27d;
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+}
+
+/* Variables en modo oscuro */
+[data-theme='dark'] {
+  --ifm-color-primary: #e0b84f;
+
+  --ifm-color-primary-dark: #cfa844;
+  --ifm-color-primary-darker: #c29e3f;
+  --ifm-color-primary-darkest: #9f8233;
+
+  --ifm-color-primary-light: #e6c66a;
+  --ifm-color-primary-lighter: #ead07b;
+  --ifm-color-primary-lightest: #f1e0a8;
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* ======================================================
+   NAVBAR
+   ====================================================== */
+
+/* Icono de GitHub en navbar (desktop) */
+.header-github-link {
+  display: flex;
+  align-items: center;
+  padding: 0 0.25rem;
+  line-height: 1;
+}
+
+/* SVG del icono GitHub usando mask */
+.header-github-link::before {
+  content: '';
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.381 1.236-3.221-.123-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.042.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.242 2.873.119 3.176.77.84 1.235 1.911 1.235 3.221 0 4.61-2.805 5.625-5.476 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .321.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12z'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+/* Ocultar GitHub en móvil (navbar y menú hamburguesa) */
+@media (max-width: 996px) {
+  .navbar__item.header-github-link,
+  .menu__link[href*="github.com"] {
+    display: none !important;
+  }
+}
+
+/* ======================================================
+   FOOTER
+   ====================================================== */
+
+/* Centrar verticalmente el logo del footer */
+.footer__bottom__container {
+  align-items: center;
+}
+
+/* Tamaño del logo del footer */
+.footer__logo {
+  max-width: 90px;
+  height: auto;
+}
+
+/* Ajustes de footer solo en móvil */
+@media (max-width: 996px) {
+
+  /* Títulos centrados */
+  .footer__title {
+    text-align: center;
+  }
+
+  /* Columnas centradas */
+  .footer__col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  /* Listas centradas */
+  .footer__items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  /* Enlaces centrados */
+  .footer__item {
+    text-align: center;
+  }
+
+  /* Espaciado vertical entre enlaces */
+  .footer__item + .footer__item {
+    margin-top: 0.5rem;
+  }
+}
+
+/* ======================================================
+   BOTÓN CENTRADO · MODO CLARO
+   ====================================================== */
+
+.button.btn-centrado {
+  height: 50px;
+  line-height: 48px; /* centrado vertical correcto */
+  padding: 0 1.25rem;
+
+  background-color: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
+  color: #ffffff;
+
+  font-weight: 600;
+}
+
+/* Hover */
+.button.btn-centrado:hover {
+  background-color: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+  color: #ffffff;
+}
+
+/* ======================================================
+   BOTÓN CENTRADO · MODO OSCURO
+   ====================================================== */
+
+[data-theme='dark'] .button.btn-centrado {
+  background-color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  color: #000000;
+}
+
+[data-theme='dark'] .button.btn-centrado:hover {
+  background-color: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+  color: #000000;
+}
+
+/* ======================================================
+   ELIMINAR ICONOS DE ENLACES EXTERNOS
+   ====================================================== */
+
+a[target="_blank"] > svg,
+.footer__link-item > svg,
+.navbar__link--external > svg {
+  display: none !important;
+}
+
+/* ======================================================
+   MAPAS GURUMAPS (iframe responsive)
+   ====================================================== */
+
+.map-embed {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Altura menor en móvil */
+@media (max-width: 996px) {
+  .map-embed {
+    height: 300px;
+  }
+}
+
+/* ======================================================
+   IMÁGENES GENERALES EN MARKDOWN
+   ====================================================== */
+
+/* Todas las imágenes del contenido */
+.markdown img {
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Mantener bordes redondeados en imágenes con zoom */
+.medium-zoom-image--opened {
+  border-radius: 7px;
+}
+
+/* Carrusel de fotos */
+.photo-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.5rem;
+}
+
+.photo-carousel img {
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+  border-radius: 8px;
+}
+
+/* ======================================================
+   BLOQUES EN DOS COLUMNAS (split-row)
+   ====================================================== */
+
+/* Contenedor principal */
+.split-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+/* Evitar desbordes */
+.split-row > div,
+.split-row > figure {
+  min-width: 0;
+}
+
+/* Imágenes dentro del split */
+.split-row img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Reset de márgenes de figure */
+.split-row figure {
+  margin: 0;
+}
+
+/* Pie de foto */
+.split-row figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Responsive: una columna en móvil */
+@media (max-width: 996px) {
+  .split-row {
+    grid-template-columns: 1fr;
+  }
+
+  .split-row img {
+    height: auto;
+  }
+}
+
+@media (max-width: 996px) {
+
+  /* Columnas vinculadas: se comportan como un solo bloque */
+  .split-row--linked {
+    row-gap: 0.25rem; /* ajusta a gusto */
+  }
+
+  /* Elimina el margen inferior del último elemento
+     del bloque superior */
+  .split-row--linked > *:first-child > *:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Refuerzo para admonitions (note, warning, etc.) */
+  .split-row--linked .theme-admonition {
+    margin-bottom: 0;
+  }
+}
