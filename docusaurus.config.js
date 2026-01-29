@@ -70,6 +70,18 @@ const config = {
     // Plugin para zoom en imágenes
     'docusaurus-plugin-image-zoom',
 
+    // Docs: Equipación
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'equipacion',
+        path: 'docs-equipacion',
+        routeBasePath: 'equipacion',
+        sidebarPath: require.resolve('./sidebars-equipacion.js'),
+        beforeDefaultRemarkPlugins: [mdiIconify],
+      },
+    ],
+
     // Docs: Comunicación
     [
       '@docusaurus/plugin-content-docs',
@@ -184,6 +196,7 @@ const config = {
           {to: '/zarriosos', label: 'Zarriøsos', position: 'left'},
           {to: '/navegacion', label: 'Navegación', position: 'left'},
           {to: '/comunicaciones', label: 'Comunicaciones', position: 'left'},
+          {to: '/equipacion', label: 'Equipación', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             type: 'search',
@@ -213,6 +226,7 @@ const config = {
               { label: 'Zarriøsos', to: '/zarriosos' },
               { label: 'Navegación', to: '/navegacion' },
               { label: 'Comunicaciones', to: '/comunicaciones' },
+              { label: 'Equipación', to: '/equipacion' },
               { label: 'Blog', to: '/blog' },
             ],
           },
