@@ -203,7 +203,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/nooktrail',
+            href: 'https://github.com/sercontri/nooktrail-web',
             position: 'right',
             className: 'header-github-link',
             'aria-label': 'GitHub',
@@ -254,7 +254,7 @@ const config = {
             title: 'Más',
             items: [
               { label: 'Blog', to: '/blog' },
-              { label: 'GitHub', href: 'https://github.com/nooktrail' },
+              { label: 'GitHub', href: 'https://github.com/sercontri/nooktrail-web' },
             ],
           },
         ],
